@@ -3,12 +3,14 @@ set ts=2 sw=2 sts=2 et
 set t_Co=256
 set hidden
 set showcmd
+set wildmenu
 set wildignore=/**/compiled,/public/javascripts/jst,/public/images,/tmp/sassc
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
 set listchars=tab:▸\ ,trail:·
 set list
+set laststatus=2 " always show the status line
 
 " highlighting matching parens confuses me
 let loaded_matchparen = 1
