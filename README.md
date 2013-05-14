@@ -1,3 +1,3 @@
-.dotfiles
+#.dotfiles
 
-These file(s) are awesome
+These files are awesome
