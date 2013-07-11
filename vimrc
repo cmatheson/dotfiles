@@ -14,7 +14,6 @@ set laststatus=2 " always show the status line
 
 " highlighting matching parens confuses me
 let loaded_matchparen = 1
-" do you want to turn on showmatch though?
 
 Bundle 'gmarik/vundle'
 Bundle 'The-NERD-tree'
@@ -28,6 +27,10 @@ Bundle 'vimux'
 Bundle 'YankRing.vim'
 Bundle 'nono/vim-handlebars'
 Bundle 'CSApprox'
+Bundle 'kien/rainbow_parentheses.vim'
+" clojure
+Bundle 'guns/vim-clojure-static'
+Bundle 'tpope/vim-fireplace'
 " colorschemes
 Bundle 'molokai'
 Bundle 'dusk'
@@ -71,6 +74,7 @@ color molokai
 
 " filetype specific stuff
 au BufNewFile,BufRead *.py set ts=4 sw=4 sts=4
+
 au User Rails
       \ if rails#buffer().relative() =~ "^spec" |
       \   map <buffer> <F6>
@@ -78,3 +82,5 @@ au User Rails
       \   map <buffer> <F5>
       \     :call VimuxRunCommand("spec -u ".expand("%").":".line("."))<CR>|
       \ endif
+
+au BufNewFile,BufRead *.clj RainbowParenthesesToggle
