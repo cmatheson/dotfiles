@@ -10,6 +10,14 @@ newbranch() {
   git checkout -b $1 -t ${2:-origin/master}
 }
 
+vim() {
+  if [[ $# -eq 0 && -e Session.vim ]]; then
+    command vim -S
+  else
+    command vim $@
+  fi
+}
+
 export LESS=-SXRF
 export GREP=--color=auto
 alias ag='ag --pager less'
