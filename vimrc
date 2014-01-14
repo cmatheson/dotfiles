@@ -12,6 +12,9 @@ set listchars=tab:▸\ ,trail:·
 set list
 set laststatus=2 " always show the status line
 
+set guioptions=
+set guifont=Consolas\ 11
+
 " highlighting matching parens confuses me
 let loaded_matchparen = 1
 
