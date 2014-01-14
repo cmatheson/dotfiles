@@ -70,21 +70,29 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_lazy_update = 20
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 
-
 filetype plugin indent on
 syntax on
 set background=dark
 color molokai
 
 " filetype specific stuff
-au BufNewFile,BufRead *.py set ts=4 sw=4 sts=4
+au FileType python setlocal ts=4 sw=4 sts=4
 
-au User Rails
-      \ if rails#buffer().relative() =~ "^spec" |
-      \   map <buffer> <F6>
-      \     :call VimuxRunCommand("spec -u " . expand("%") )<CR>|
-      \   map <buffer> <F5>
-      \     :call VimuxRunCommand("spec -u ".expand("%").":".line("."))<CR>|
-      \ endif
+augroup rails-specs
+  au!
+  au User Rails
+        \ if rails#buffer().relative() =~ "^spec" |
+        \   map <buffer> <F6>
+        \     :call VimuxRunCommand("spec -u " . expand("%") )<CR>|
+        \   map <buffer> <F5>
+        \     :call VimuxRunCommand("spec -u ".expand("%").":".line("."))<CR>|
+        \ endif
+augroup END
 
-au BufNewFile,BufRead *.clj RainbowParenthesesToggle
+augroup clojure-rainbow
+  au!
+  au FileType clojure RainbowParenthesesActivate
+  au Syntax clojure RainbowParenthesesLoadRound
+  au Syntax clojure RainbowParenthesesLoadSquare
+  au Syntax clojure RainbowParenthesesLoadBraces
+augroup END
