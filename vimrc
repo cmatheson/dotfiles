@@ -31,6 +31,7 @@ Bundle 'YankRing.vim'
 Bundle 'nono/vim-handlebars'
 Bundle 'CSApprox'
 Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'Valloric/YouCompleteMe'
 " clojure
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
