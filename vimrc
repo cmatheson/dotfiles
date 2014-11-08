@@ -43,6 +43,7 @@ Bundle 'molokai'
 Bundle 'dusk'
 Bundle 'github-theme'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'morhetz/gruvbox'
 
 " maps {{{
 nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
@@ -76,7 +77,7 @@ nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 filetype plugin indent on
 syntax on
 set background=dark
-color molokai
+color gruvbox
 
 " filetype specific stuff
 au FileType python setlocal ts=4 sw=4 sts=4
