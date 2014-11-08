@@ -19,7 +19,7 @@ set guifont=Consolas\ 11
 let loaded_matchparen = 1
 
 Bundle 'gmarik/vundle'
-Bundle 'The-NERD-tree'
+Bundle 'tpope/vim-vinegar'
 Bundle 'The-NERD-Commenter'
 Bundle 'ctrlp.vim'
 Bundle 'tpope/vim-rails.git'
