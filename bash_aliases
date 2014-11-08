@@ -15,6 +15,18 @@ vim() {
   fi
 }
 
+_cleanup_after_ssh_alias() {
+  trap - SIGCHLD
+  tmux set-window-option automatic-rename on
+}
+ssh() {
+  if [[ "$TERM" == screen* ]]; then
+    tmux rename-window $1
+    trap _cleanup_after_ssh_alias SIGCHLD
+  fi
+  TERM=${TERM%-italic} command ssh "$@"
+}
+
 export LESS=-SXRF
 export GREP=--color=auto
 alias ag='ag --pager less'
