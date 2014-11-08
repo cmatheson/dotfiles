@@ -35,6 +35,9 @@ Bundle 'Valloric/YouCompleteMe'
 " clojure
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
+"javascript
+Bundle "pangloss/vim-javascript"
+Bundle "marijnh/tern_for_vim"
 " colorschemes
 Bundle 'molokai'
 Bundle 'dusk'
