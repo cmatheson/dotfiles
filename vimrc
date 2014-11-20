@@ -11,6 +11,8 @@ call vundle#rc()
 set listchars=tab:▸\ ,trail:·
 set list
 set laststatus=2 " always show the status line
+set undodir=~/.vim/undo
+set undofile
 
 set guioptions=
 set guifont=Consolas\ 11
