@@ -1,0 +1,21 @@
+[user]
+	name = Cameron Matheson
+	email = cameron.matheson@gmail.com
+[alias]
+	st = status
+	co = checkout
+	br = branch
+	sdiff = diff --staged
+	ci = commit
+	glog = log --graph
+  fmerge = merge --ff-only
+	olog = log --oneline
+	amend = commit --amend
+[color]
+	ui = true
+[rerere]
+	enabled = 1
+[init]
+	templatedir = ~/.git_template
+[push]
+	default = simple
