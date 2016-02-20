@@ -4,7 +4,7 @@ set t_Co=256
 set hidden
 set showcmd
 set wildmenu
-set wildignore=/**/compiled,/public/javascripts/jst,/public/images,/tmp/sassc
+set wildignore=/**/compiled,/public/javascripts/jst,/public/images
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#rc()
@@ -13,6 +13,7 @@ set list
 set laststatus=2 " always show the status line
 set undodir=~/.vim/undo
 set undofile
+set diffopt=vertical
 
 set guioptions=
 set guifont=Consolas\ 11
@@ -35,17 +36,24 @@ Bundle 'nono/vim-handlebars'
 Bundle 'CSApprox'
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'Valloric/YouCompleteMe'
+Plugin 'Gundo'
 " clojure
 Bundle 'guns/vim-clojure-static'
 Bundle 'tpope/vim-fireplace'
+" go
+Bundle 'fatih/vim-go'
 "javascript
 Bundle "pangloss/vim-javascript"
 Bundle "marijnh/tern_for_vim"
+"typescript
+Bundle "leafgarland/typescript-vim"
 " colorschemes
 Bundle 'molokai'
 Bundle 'dusk'
 Bundle 'github-theme'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'pink'
+Bundle 'chriskempson/base16-vim'
 Bundle 'morhetz/gruvbox'
 
 " maps {{{
@@ -90,9 +98,9 @@ augroup rails-specs
   au User Rails
         \ if rails#buffer().relative() =~ "^spec" |
         \   map <buffer> <F6>
-        \     :call VimuxRunCommand("spec -u " . expand("%") )<CR>|
+        \     :call VimuxRunCommand("rspec " . expand("%") )<CR>|
         \   map <buffer> <F5>
-        \     :call VimuxRunCommand("spec -u ".expand("%").":".line("."))<CR>|
+        \     :call VimuxRunCommand("rspec ".expand("%").":".line("."))<CR>|
         \ endif
 augroup END
 

@@ -6,11 +6,10 @@ export PATH=~/bin:$PATH
 export EDITOR=vim
 export PAGER=less
 
-export RUBY_GC_MALLOC_LIMIT=1000000000
-export RUBY_HEAP_FREE_MIN=500000
-export RUBY_HEAP_MIN_SLOTS=1000000
-export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
-export RUBY_HEAP_SLOTS_INCREMENT=1000000
+export PATH="$PATH:$HOME/opt/node_modules/.bin"
+
+source /usr/share/chruby/chruby.sh
+source /usr/share/chruby/auto.sh
 
 # If not running interactively, don't do anything
 case $- in
@@ -65,9 +64,9 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
-    PS1='\u@\h:\w\$ '
+    PS1='\h:\w\$ '
 fi
 unset color_prompt force_color_prompt
 

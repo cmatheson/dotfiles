@@ -1,9 +1,10 @@
 # so technically these aren't all aliases.  don't worry about it.
-alias tmux="tmux -2"
-alias ack=ack-grep
+alias tmux="tmux -2 "
 b() { bundle-check && bundle exec "$@"; }
-bundle-check() { bundle check || bundle update; }
+bt() { RAILS_ENV=test b "$@"; }
+bundle-check() { bundle check > /dev/null || bundle update; }
 spec() { bundle-check; bundle exec spec "$@"; }
+rspec() { bundle-check; b rspec --color --format NyanCatFormatter "$@"; }
 new() { ls -c $1 | head -n ${2:-5}; }
 newbranch() { git checkout -b $1 -t ${2:-origin/master}; }
 
@@ -15,14 +16,10 @@ vim() {
   fi
 }
 
-_cleanup_after_ssh_alias() {
-  trap - SIGCHLD
-  tmux set-window-option automatic-rename on
-}
 ssh() {
   if [[ "$TERM" == screen* ]]; then
     tmux rename-window $1
-    trap _cleanup_after_ssh_alias SIGCHLD
+    trap "tmux set-window-option automatic-rename on" RETURN
   fi
   TERM=${TERM%-italic} command ssh "$@"
 }
