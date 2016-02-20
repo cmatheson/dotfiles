@@ -6,8 +6,6 @@ set showcmd
 set wildmenu
 set wildignore=/**/compiled,/public/javascripts/jst,/public/images,/tmp/sassc
 filetype off
-set rtp+=~/.vim/bundle/vundle
-call vundle#rc()
 set listchars=tab:▸\ ,trail:·
 set list
 set laststatus=2 " always show the status line
@@ -20,33 +18,40 @@ set guifont=Consolas\ 11
 " highlighting matching parens confuses me
 let loaded_matchparen = 1
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-vinegar'
-Bundle 'The-NERD-Commenter'
-Bundle 'ctrlp.vim'
-Bundle 'tpope/vim-rails.git'
-Bundle 'tpope/vim-fugitive.git'
-Bundle 'tpope/vim-characterize.git'
-Bundle 'tpope/vim-eunuch.git'
-Bundle 'vim-coffee-script'
-Bundle 'vimux'
-Bundle 'YankRing.vim'
-Bundle 'nono/vim-handlebars'
-Bundle 'CSApprox'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'Valloric/YouCompleteMe'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-vinegar'
+Plugin 'The-NERD-Commenter'
+Plugin 'ctrlp.vim'
+Plugin 'tpope/vim-rails.git'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'tpope/vim-characterize.git'
+Plugin 'tpope/vim-eunuch.git'
+Plugin 'vim-coffee-script'
+Plugin 'vimux'
+Plugin 'YankRing.vim'
+Plugin 'nono/vim-handlebars'
+Plugin 'CSApprox'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'Valloric/YouCompleteMe'
 " clojure
-Bundle 'guns/vim-clojure-static'
-Bundle 'tpope/vim-fireplace'
+Plugin 'guns/vim-clojure-static'
+Plugin 'tpope/vim-fireplace'
 "javascript
-Bundle "pangloss/vim-javascript"
-Bundle "marijnh/tern_for_vim"
+Plugin 'pangloss/vim-javascript'
+Plugin 'marijnh/tern_for_vim'
 " colorschemes
-Bundle 'molokai'
-Bundle 'dusk'
-Bundle 'github-theme'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'morhetz/gruvbox'
+Plugin 'molokai'
+Plugin 'dusk'
+Plugin 'github-theme'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'morhetz/gruvbox'
+
+call vundle#end()
+filetype plugin indent on
 
 " maps {{{
 nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
@@ -77,7 +82,6 @@ let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_lazy_update = 20
 nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 
-filetype plugin indent on
 syntax on
 set background=dark
 color gruvbox
