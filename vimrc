@@ -25,7 +25,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'The-NERD-Commenter'
-Plugin 'ctrlp.vim'
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-characterize.git'
@@ -57,6 +56,12 @@ Plugin 'pink'
 Plugin 'chriskempson/base16-vim'
 Plugin 'morhetz/gruvbox'
 
+" fzf - i wish this was installed with vundle...
+"  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+"  ~/.fzf/install
+set rtp+=~/.fzf
+nnoremap <silent> <Leader>t :FZF<cr>
+
 call vundle#end()
 filetype plugin indent on
 
@@ -74,20 +79,9 @@ inoremap jk <esc>
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir': '\.git$|\.hg$|\.svn$|compiled$|jst$|.sass-cache'
-  \ }
-
 " fix C-CR binding in Command-T plugin
 "let g:CommandTSelectNextMap=['<C-n>', '<Down>']
 "let g:CommandTAcceptSelectionSplitMap='<C-j>'
-
-" ctrl-p
-let g:ctrlp_map = '<Leader>t'
-let g:ctrlp_cmd = 'CtrlPMixed'
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_lazy_update = 20
-nnoremap <silent> <Leader>b :CtrlPBuffer<CR>
 
 syntax on
 set background=dark
