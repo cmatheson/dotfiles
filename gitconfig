@@ -2,7 +2,7 @@
 	name = Cameron Matheson
 	email = cameron.matheson@gmail.com
 [alias]
-	st = status
+	st = status --short --branch
 	co = checkout
 	br = branch
 	sdiff = diff --staged
