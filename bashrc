@@ -119,3 +119,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export FZF_DEFAULT_COMMAND='rg --files'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
