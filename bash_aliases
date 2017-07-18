@@ -7,6 +7,8 @@ spec() { bundle-check; bundle exec spec "$@"; }
 rspec() { bundle-check; b rspec --color --format NyanCatFormatter "$@"; }
 new() { ls -c $1 | head -n ${2:-5}; }
 newbranch() { git checkout -b $1 -t ${2:-origin/master}; }
+weather() {
+  curl http://wttr.in/${1:-84009}
 }
 
 ssh() {
