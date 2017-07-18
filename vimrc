@@ -32,6 +32,7 @@ Plugin 'tpope/vim-eunuch.git'
 Plugin 'vim-coffee-script'
 Plugin 'vimux'
 Plugin 'YankRing.vim'
+let g:yankring_persist = 0
 Plugin 'nono/vim-handlebars'
 Plugin 'CSApprox'
 Plugin 'kien/rainbow_parentheses.vim'
