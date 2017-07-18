@@ -104,6 +104,11 @@ augroup rails-specs
         \     :call VimuxRunCommand("rspec " . expand("%") )<CR>|
         \   map <buffer> <F5>
         \     :call VimuxRunCommand("rspec ".expand("%").":".line("."))<CR>|
+        \ elseif rails#buffer().relative() =~ "^test" |
+        \   map <buffer> <F6>
+        \     :call VimuxRunCommand("b rails test ".expand("%") )<cr>|
+        \   map <buffer> <F5>
+        \     :call VimuxRunCommand("b rails test ".expand("%").":".line("."))<cr>|
         \ endif
 augroup END
 
