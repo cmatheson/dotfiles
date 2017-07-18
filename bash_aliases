@@ -7,13 +7,6 @@ spec() { bundle-check; bundle exec spec "$@"; }
 rspec() { bundle-check; b rspec --color --format NyanCatFormatter "$@"; }
 new() { ls -c $1 | head -n ${2:-5}; }
 newbranch() { git checkout -b $1 -t ${2:-origin/master}; }
-
-vim() {
-  if [[ $# -eq 0 && -e Session.vim ]]; then
-    command vim -S
-  else
-    command vim "$@"
-  fi
 }
 
 ssh() {
