@@ -119,3 +119,9 @@ augroup clojure-rainbow
   au Syntax clojure RainbowParenthesesLoadSquare
   au Syntax clojure RainbowParenthesesLoadBraces
 augroup END
+
+augroup js
+  au FileType javascript.jsx,javascript setlocal formatprg=./node_modules/.bin/prettier\ --stdin
+  au FileType javascript.jsx,javascript map <leader>ff mfgggqG`f<cr>
+  set backupcopy=yes "this fixes webpack's crappy watcher
+augroup END
