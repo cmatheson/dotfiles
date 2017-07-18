@@ -20,9 +20,9 @@ set guifont=Consolas\ 11
 let loaded_matchparen = 1
 
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
+call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
 Plugin 'The-NERD-Commenter'
 Plugin 'ctrlp.vim'
