@@ -67,6 +67,8 @@ Plugin 'dracula/vim'
 set rtp+=~/.fzf
 nnoremap <silent> <Leader>t :FZF<cr>
 
+packadd! matchit
+
 call vundle#end()
 filetype plugin indent on
 
