@@ -59,6 +59,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'pink'
 Plugin 'chriskempson/base16-vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'dracula/vim'
 
 " fzf - i wish this was installed with vundle...
 "  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
