@@ -79,10 +79,6 @@ inoremap jk <esc>
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 
-" fix C-CR binding in Command-T plugin
-"let g:CommandTSelectNextMap=['<C-n>', '<Down>']
-"let g:CommandTAcceptSelectionSplitMap='<C-j>'
-
 syntax on
 set background=dark
 color gruvbox
