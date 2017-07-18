@@ -20,7 +20,7 @@ ssh() {
 }
 
 export LESS=-SXRF
-export GREP=--color=auto
+alias grep='grep --color=auto'
 alias ag='ag --pager less'
 
 LOCAL_ALIASES=~/.bash_aliases.local
