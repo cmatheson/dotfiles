@@ -43,7 +43,7 @@ Plugin 'vimwiki/vimwiki'
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
 " go
-Plugin 'fatih/vim-go'
+"Plugin 'fatih/vim-go'
 "javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'marijnh/tern_for_vim'
