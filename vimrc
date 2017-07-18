@@ -38,6 +38,7 @@ Plugin 'CSApprox'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'Gundo'
+Plugin 'vimwiki/vimwiki'
 " clojure
 Plugin 'guns/vim-clojure-static'
 Plugin 'tpope/vim-fireplace'
@@ -83,6 +84,9 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 syntax on
 set background=dark
 color gruvbox
+
+" vim wiki
+let g:vimwiki_list = [{'path': '~/.vim/wiki'}]
 
 " filetype specific stuff
 au FileType python setlocal ts=4 sw=4 sts=4
