@@ -2,7 +2,7 @@
 
 set -e
 
-dir=$(dirname "$(realpath "$0")")
+dir=$(dirname "$0")
 
 declare -A dotfiles
 dotfiles[vimrc]=~/.vimrc
