@@ -8,8 +8,10 @@ export PAGER=less
 
 export PATH="$PATH:$HOME/opt/node_modules/.bin"
 
-source /usr/share/chruby/chruby.sh
-source /usr/share/chruby/auto.sh
+if [ -d /usr/share/chruby ]; then
+  source /usr/share/chruby/chruby.sh
+  source /usr/share/chruby/auto.sh
+fi
 
 # If not running interactively, don't do anything
 case $- in
