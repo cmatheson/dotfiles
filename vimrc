@@ -125,3 +125,8 @@ augroup js
   au FileType javascript.jsx,javascript map <leader>ff mfgggqG`f<cr>
   set backupcopy=yes "this fixes webpack's crappy watcher
 augroup END
+
+augroup salt
+  au!
+  au BufNewFile,BufRead *.sls setf yaml
+augroup END
