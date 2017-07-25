@@ -36,7 +36,9 @@ let g:yankring_persist = 0
 Plugin 'nono/vim-handlebars'
 Plugin 'CSApprox'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'Valloric/YouCompleteMe'
+if v:version > 704
+  Plugin 'Valloric/YouCompleteMe'
+endif
 Plugin 'Gundo'
 Plugin 'vimwiki/vimwiki'
 " clojure
@@ -67,7 +69,9 @@ Plugin 'dracula/vim'
 set rtp+=~/.fzf
 nnoremap <silent> <Leader>t :FZF<cr>
 
-packadd! matchit
+if v:version > 704
+  packadd! matchit
+endif
 
 call vundle#end()
 filetype plugin indent on
