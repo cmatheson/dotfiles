@@ -13,6 +13,13 @@ set undodir=~/.vim/undo
 set undofile
 set diffopt=vertical
 
+" true color support
+set termguicolors
+if !has("nvim") && $TERM == "screen-256color"
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
+
 set guioptions=
 set guifont=Consolas\ 11
 
@@ -34,7 +41,7 @@ Plugin 'vimux'
 Plugin 'YankRing.vim'
 let g:yankring_persist = 0
 Plugin 'nono/vim-handlebars'
-Plugin 'CSApprox'
+"Plugin 'CSApprox'
 Plugin 'kien/rainbow_parentheses.vim'
 if v:version > 704
   Plugin 'Valloric/YouCompleteMe'
