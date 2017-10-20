@@ -31,7 +31,7 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-vinegar'
-Plugin 'The-NERD-Commenter'
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-rails.git'
 Plugin 'tpope/vim-fugitive.git'
 Plugin 'tpope/vim-characterize.git'
