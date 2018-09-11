@@ -9,6 +9,7 @@ newbranch() { git checkout -b $1 -t ${2:-origin/master}; }
 weather() {
   curl http://wttr.in/${1:-84009}
 }
+rg() { command rg -p "$@" | less; }
 
 export LESS=-SXRF
 alias grep='grep --color=auto'
