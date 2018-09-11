@@ -3,8 +3,7 @@ alias tmux="tmux -2 "
 b() { bundle-check && bundle exec "$@"; }
 bt() { RAILS_ENV=test b "$@"; }
 bundle-check() { bundle check > /dev/null || bundle update; }
-spec() { bundle-check; bundle exec spec "$@"; }
-rspec() { bundle-check; b rspec --color --format NyanCatFormatter "$@"; }
+rspec() { bundle-check; b spring rspec --color --format NyanCatFormatter "$@"; }
 new() { ls -c $1 | head -n ${2:-5}; }
 newbranch() { git checkout -b $1 -t ${2:-origin/master}; }
 weather() {
