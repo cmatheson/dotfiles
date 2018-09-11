@@ -11,6 +11,7 @@ dotfiles[bashrc]=~/.bashrc
 dotfiles[bash_aliases]=~/.bash_aliases
 dotfiles[gitconfig]=~/.gitconfig
 dotfiles[git_template]=~/.git_template
+dotfiles[inputrc]=~/.inputrc
 
 for f in "$dir"/*; do
   key=$(basename "$f")
