@@ -10,14 +10,6 @@ weather() {
   curl http://wttr.in/${1:-84009}
 }
 
-ssh() {
-  if [[ "$TERM" == screen* ]]; then
-    tmux rename-window $1
-    trap "tmux set-window-option automatic-rename on" RETURN
-  fi
-  TERM=${TERM%-italic} command ssh "$@"
-}
-
 export LESS=-SXRF
 alias grep='grep --color=auto'
 alias ag='ag --pager less'
