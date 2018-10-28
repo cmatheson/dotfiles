@@ -4,13 +4,14 @@
 [alias]
 	st = status --short --branch
 	co = checkout
-	br = branch
+	br = branch --sort=committerdate
 	sdiff = diff --staged
 	ci = commit
 	glog = log --graph
   fmerge = merge --ff-only
 	olog = log --oneline
 	amend = commit --amend
+	newbranch = checkout -t origin/master -b
 [color]
 	ui = true
 [rerere]
