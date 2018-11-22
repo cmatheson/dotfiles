@@ -41,6 +41,7 @@ Plugin 'vimux'
 Plugin 'YankRing.vim'
 let g:yankring_persist = 0
 Plugin 'nono/vim-handlebars'
+Plugin 'ConradIrwin/vim-bracketed-paste'
 "Plugin 'CSApprox'
 Plugin 'kien/rainbow_parentheses.vim'
 if v:version > 704

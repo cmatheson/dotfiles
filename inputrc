@@ -1,3 +1,4 @@
 set completion-prefix-display-length 1
 set blink-matching-paren on
 set show-all-if-ambiguous on
+set enable-bracketed-paste on
