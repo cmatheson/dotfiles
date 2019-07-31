@@ -85,18 +85,17 @@ call vundle#end()
 filetype plugin indent on
 
 " maps {{{
-nnoremap <silent> <Leader>f :NERDTreeToggle<CR>
 
 " replace caps-lock?
 inoremap <leader>u <esc>vawUea
 nnoremap <leader>u vawU
-" }}}
 
 inoremap jk <esc>
 
 " vimrc editing/sourcing
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
+" }}}
 
 syntax on
 set background=dark
