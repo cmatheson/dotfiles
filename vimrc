@@ -44,7 +44,7 @@ Plugin 'kien/rainbow_parentheses.vim'
 if v:version > 704
   Plugin 'Valloric/YouCompleteMe'
 endif
-Plugin 'Gundo'
+Plugin 'mbbill/undotree'
 Plugin 'vimwiki/vimwiki'
 " clojure
 Plugin 'guns/vim-clojure-static'
@@ -85,6 +85,7 @@ call vundle#end()
 filetype plugin indent on
 
 " maps {{{
+nnoremap <silent> <Leader>gu :UndotreeToggle<CR>
 
 " replace caps-lock?
 inoremap <leader>u <esc>vawUea
