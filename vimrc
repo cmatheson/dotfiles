@@ -23,9 +23,6 @@ endif
 set guioptions=
 set guifont=Consolas\ 11
 
-" highlighting matching parens confuses me
-let loaded_matchparen = 1
-
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
