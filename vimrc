@@ -53,7 +53,6 @@ Plugin 'tpope/vim-fireplace'
 "Plugin 'fatih/vim-go'
 "javascript
 Plugin 'pangloss/vim-javascript'
-Plugin 'marijnh/tern_for_vim'
 Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 "typescript
