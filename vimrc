@@ -57,6 +57,8 @@ Plugin 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 "typescript
 Plugin 'leafgarland/typescript-vim'
+"elixir
+Plugin 'elixir-editors/vim-elixir'
 " colorschemes
 Plugin 'molokai'
 Plugin 'dusk'
