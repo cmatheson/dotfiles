@@ -92,6 +92,8 @@ nnoremap <leader>u vawU
 
 inoremap jk <esc>
 
+nnoremap <leader>cn :cn<cr>
+
 " vimrc editing/sourcing
 nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
@@ -106,6 +108,12 @@ let g:vimwiki_list = [{'path': '~/.vim/wiki'}]
 
 " filetype specific stuff
 au FileType python setlocal ts=4 sw=4 sts=4
+
+augroup ruby
+  au!
+  au FileType ruby map <buffer> <Leader>cw :!ruby -cw %<cr>
+  au FileType ruby map <buffer> <Leader>rr :!ruby %<cr>
+augroup END
 
 augroup rails-specs
   au!
@@ -132,8 +140,9 @@ augroup clojure-rainbow
 augroup END
 
 augroup js
-  au FileType javascript.jsx,javascript setlocal formatprg=./node_modules/.bin/prettier\ --stdin
+  au FileType javascript.jsx,javascript setlocal formatprg=./node_modules/.bin/prettier\ --parser=babel\ --stdin
   au FileType javascript.jsx,javascript map <leader>ff mfgggqG`f<cr>
+  au FileType javascript.jsx,javascript noremap  :YcmCompleter GoTo<cr>
   set backupcopy=yes "this fixes webpack's crappy watcher
 augroup END
 
