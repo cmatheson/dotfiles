@@ -70,6 +70,7 @@ Plugin 'morhetz/gruvbox'
 Plugin 'dracula/vim'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'NLKNguyen/papercolor-theme'
+Plugin 'haishanh/night-owl.vim'
 
 " fzf - i wish this was installed with vundle...
 "  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -102,7 +103,7 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 
 syntax on
 set background=dark
-color PaperColor
+color night-owl
 
 " vim wiki
 let g:vimwiki_list = [{'path': '~/.vim/wiki'}]
