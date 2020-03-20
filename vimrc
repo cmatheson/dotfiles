@@ -114,6 +114,8 @@ syntax on
 set background=dark
 color night-owl
 
+set grepprg=rg\ --vimgrep\ --no-heading
+
 " vim wiki
 let g:vimwiki_list = [{'path': '~/.vim/wiki'}]
 
