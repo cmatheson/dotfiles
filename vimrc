@@ -12,6 +12,8 @@ set laststatus=2 " always show the status line
 set undodir=~/.vim/undo
 set undofile
 set diffopt=vertical
+set ruler
+set backspace=eol,indent,start
 
 " true color support
 set termguicolors
