@@ -110,7 +110,7 @@ nnoremap <leader>sv :so $MYVIMRC<cr>
 
 syntax on
 set background=dark
-color night-owl
+color gruvbox
 
 set grepprg=rg\ --vimgrep\ --no-heading
 
