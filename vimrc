@@ -45,6 +45,13 @@ Plugin 'ConradIrwin/vim-bracketed-paste'
 Plugin 'kien/rainbow_parentheses.vim'
 if v:version > 704
   Plugin 'Valloric/YouCompleteMe'
+  let g:ycm_language_server = [
+  \ {
+  \   'name': 'elixir-ls',
+  \   'cmdline': [ expand( '$HOME/opt/elixir-ls/rel/language_server.sh' ) ],
+  \   'filetypes': [ 'elixir', 'eelixir' ],
+  \ },
+  \ ]
 endif
 Plugin 'mbbill/undotree'
 Plugin 'vimwiki/vimwiki'
@@ -133,6 +140,19 @@ augroup rails-specs
         \   map <buffer> <F5>
         \     :call VimuxRunCommand("b rails test ".expand("%").":".line("."))<cr>|
         \ endif
+augroup END
+
+augroup elixir
+  au!
+  au FileType elixir setlocal formatprg=mix\ format\ \-
+  au FileType elixir
+        \ if expand("%") =~ ".exs$" |
+        \   map <buffer> <F6>
+        \     :call VimuxRunCommand("mix test ".expand("%"))<cr>|
+        \   map <buffer> <F5>
+        \     :call VimuxRunCommand("mix test ".expand("%").":".line("."))<cr>|
+        \ endif
+  au FileType elixir noremap  :YcmCompleter GoTo<cr>
 augroup END
 
 augroup clojure-rainbow
