@@ -128,3 +128,5 @@ fi
 export FZF_DEFAULT_COMMAND='rg --files'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+source ~/opt/z/z.sh

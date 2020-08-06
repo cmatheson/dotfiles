@@ -30,3 +30,9 @@ fi
 if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 fi
+
+# install z
+if [ ! -e ~/opt/z/z.sh ]; then
+  mkdir -p ~/opt
+  git clone https://github.com/rupa/z  ~/opt/z
+fi
