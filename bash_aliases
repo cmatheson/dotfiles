@@ -10,6 +10,8 @@ weather() {
   curl http://wttr.in/${1:-84009}
 }
 rg() { command rg -p "$@" | less; }
+acurl () { curl -H "Authorization: Bearer $AUTH_TOKEN" "$@" ; }
+
 
 export LESS=-SXRF
 alias grep='grep --color=auto'
