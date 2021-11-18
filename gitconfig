@@ -1,6 +1,6 @@
 [user]
 	name = Cameron Matheson
-	email = cameron.matheson@gmail.com
+	useConfigOnly = true
 [alias]
 	st = status --short --branch
 	co = checkout
