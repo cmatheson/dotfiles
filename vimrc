@@ -166,9 +166,9 @@ augroup clojure-rainbow
 augroup END
 
 augroup js
-  au FileType javascript.jsx,javascript setlocal formatprg=./node_modules/.bin/prettier\ --parser=babel\ --stdin
-  au FileType javascript.jsx,javascript map <buffer> <leader>ff mfgggqG`f<cr>
-  au FileTYpe javascript.jsx,javascript noremap <buffer>  :YcmCompleter GoTo<cr>
+  au FileType javascript.jsx,javascript,typescript setlocal formatprg=prettier\ --parser=typescript
+  au FileType javascript.jsx,javascript,typescript map <buffer> <leader>ff mfgggqG`f<cr>
+  au FileTYpe javascript.jsx,javascript,typescript noremap <buffer>  :YcmCompleter GoTo<cr>
   set backupcopy=yes "this fixes webpack's crappy watcher
 augroup END
 
