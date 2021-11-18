@@ -56,13 +56,11 @@ if v:version > 704
   \ ]
 endif
 Plug 'mbbill/undotree'
+let g:vimwiki_key_mappings = {'headers': 0}
 Plug 'vimwiki/vimwiki'
 " clojure
 Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-fireplace'
-" go
-"Plug 'fatih/vim-go'
-"let g:ycm_gopls_binary_path = "~/go/bin/gopls"
 "javascript
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
