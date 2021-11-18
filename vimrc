@@ -25,24 +25,28 @@ endif
 set guioptions=
 set guifont=Consolas\ 11
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Install vim-plug if not found
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+endif
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-rails.git'
-Plugin 'tpope/vim-fugitive.git'
-Plugin 'tpope/vim-characterize.git'
-Plugin 'tpope/vim-eunuch.git'
-Plugin 'vimux'
-Plugin 'YankRing.vim'
+call plug#begin('~/.vim/bundle')
+Plug 'VundleVim/Vundle.vim'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-eunuch'
+Plug 'vim-scripts/YankRing.vim'
 let g:yankring_persist = 0
-Plugin 'ConradIrwin/vim-bracketed-paste'
-"Plugin 'CSApprox'
-Plugin 'kien/rainbow_parentheses.vim'
+Plug 'ConradIrwin/vim-bracketed-paste'
+"Plug 'CSApprox'
+Plug 'kien/rainbow_parentheses.vim'
 if v:version > 704
-  Plugin 'Valloric/YouCompleteMe'
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --go-completer' }
+  " let g:ycm_language_server = [
   let g:ycm_language_server = [
   \ {
   \   'name': 'elixir-ls',
@@ -51,33 +55,36 @@ if v:version > 704
   \ },
   \ ]
 endif
-Plugin 'mbbill/undotree'
-Plugin 'vimwiki/vimwiki'
+Plug 'mbbill/undotree'
+Plug 'vimwiki/vimwiki'
 " clojure
-Plugin 'guns/vim-clojure-static'
-Plugin 'tpope/vim-fireplace'
+Plug 'guns/vim-clojure-static'
+Plug 'tpope/vim-fireplace'
 " go
-"Plugin 'fatih/vim-go'
+"Plug 'fatih/vim-go'
+"let g:ycm_gopls_binary_path = "~/go/bin/gopls"
 "javascript
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 let g:jsx_ext_required = 0
 "typescript
-Plugin 'leafgarland/typescript-vim'
+Plug 'leafgarland/typescript-vim'
 "elixir
-Plugin 'elixir-editors/vim-elixir'
+Plug 'elixir-editors/vim-elixir'
 " colorschemes
-Plugin 'molokai'
-Plugin 'dusk'
-Plugin 'github-theme'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'pink'
-Plugin 'chriskempson/base16-vim'
-Plugin 'morhetz/gruvbox'
-Plugin 'dracula/vim'
-Plugin 'lifepillar/vim-solarized8'
-Plugin 'NLKNguyen/papercolor-theme'
-Plugin 'haishanh/night-owl.vim'
+Plug 'vim-scripts/molokai'
+Plug 'vim-scripts/dusk'
+Plug 'vim-scripts/github-theme'
+Plug 'nanotech/jellybeans.vim'
+Plug 'vim-scripts/pink'
+Plug 'chriskempson/base16-vim'
+Plug 'morhetz/gruvbox'
+Plug 'dracula/vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'NLKNguyen/papercolor-theme'
+Plug 'haishanh/night-owl.vim'
+
+call plug#end()
 
 " fzf - i wish this was installed with vundle...
 "  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -89,8 +96,6 @@ if v:version > 704
   packadd! matchit
 endif
 
-call vundle#end()
-filetype plugin indent on
 
 " maps {{{
 nnoremap <silent> <Leader>gu :UndotreeToggle<CR>
@@ -108,7 +113,6 @@ nnoremap <leader>ev :vsp $MYVIMRC<cr>
 nnoremap <leader>sv :so $MYVIMRC<cr>
 " }}}
 
-syntax on
 set background=dark
 color gruvbox
 
