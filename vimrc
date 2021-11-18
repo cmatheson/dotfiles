@@ -176,3 +176,8 @@ augroup salt
   au!
   au BufNewFile,BufRead *.sls setf yaml
 augroup END
+
+augroup go
+  au FileType go setlocal listchars=tab:\ \ ,trail:·
+  au FileType go setlocal noexpandtab
+augroup END
