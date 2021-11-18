@@ -12,6 +12,7 @@
 	olog = log --oneline
 	amend = commit --amend
 	newbranch = checkout -t origin/master -b
+	cleanup = !git br | fzf --multi  | xargs git br -D
 [color]
 	ui = true
 [rerere]
