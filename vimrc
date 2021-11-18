@@ -46,7 +46,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'kien/rainbow_parentheses.vim'
 if v:version > 704
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py --ts-completer --go-completer' }
-  " let g:ycm_language_server = [
+  " let g:ycm_log_level = 'debug'
   let g:ycm_language_server = [
   \ {
   \   'name': 'elixir-ls',
