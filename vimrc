@@ -14,6 +14,7 @@ set undofile
 set diffopt=vertical
 set ruler
 set backspace=eol,indent,start
+set directory=~/.vim/swapfiles
 
 " true color support
 set termguicolors

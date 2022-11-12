@@ -19,6 +19,7 @@
 	enabled = 1
 [init]
 	templatedir = ~/.git_template
+	defaultBranch = main
 [push]
 	default = simple
 [pull]

@@ -19,3 +19,5 @@ alias ag='ag --pager less'
 
 LOCAL_ALIASES=~/.bash_aliases.local
 [ -e $LOCAL_ALIASES ] && . $LOCAL_ALIASES
+
+export ERL_AFLAGS="-kernel shell_history enabled"
