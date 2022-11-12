@@ -10,6 +10,7 @@ dotfiles[tmux.conf]=~/.tmux.conf
 dotfiles[bashrc]=~/.bashrc
 dotfiles[bash_aliases]=~/.bash_aliases
 dotfiles[gitconfig]=~/.gitconfig
+dotfiles[gitignoreglobal]=~/.gitignore_global
 dotfiles[git_template]=~/.git_template
 dotfiles[inputrc]=~/.inputrc
 

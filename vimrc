@@ -39,6 +39,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-eunuch'
+Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/YankRing.vim'
 let g:yankring_persist = 0
 Plug 'ConradIrwin/vim-bracketed-paste'
@@ -56,8 +57,6 @@ if v:version > 704
   \ ]
 endif
 Plug 'mbbill/undotree'
-let g:vimwiki_key_mappings = {'headers': 0}
-Plug 'vimwiki/vimwiki'
 " clojure
 Plug 'guns/vim-clojure-static'
 Plug 'tpope/vim-fireplace'
@@ -81,6 +80,7 @@ Plug 'dracula/vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'NLKNguyen/papercolor-theme'
 Plug 'haishanh/night-owl.vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -93,7 +93,6 @@ nnoremap <silent> <Leader>t :FZF<cr>
 if v:version > 704
   packadd! matchit
 endif
-
 
 " maps {{{
 nnoremap <silent> <Leader>gu :UndotreeToggle<CR>
@@ -117,7 +116,8 @@ color gruvbox
 set grepprg=rg\ --vimgrep\ --no-heading
 
 " vim wiki
-let g:vimwiki_list = [{'path': '~/.vim/wiki'}]
+let g:vimwiki_key_mappings = {'headers': 0}
+let g:vimwiki_list = [{'path': '~/.vim/wiki', 'syntax': 'markdown', 'ext': '.md'}]
 
 " filetype specific stuff
 au FileType python setlocal ts=4 sw=4 sts=4
@@ -168,7 +168,10 @@ augroup END
 augroup js
   au FileType javascript.jsx,javascript,typescript setlocal formatprg=prettier\ --parser=typescript
   au FileType javascript.jsx,javascript,typescript map <buffer> <leader>ff mfgggqG`f<cr>
-  au FileTYpe javascript.jsx,javascript,typescript noremap <buffer>  :YcmCompleter GoTo<cr>
+  au FileType javascript.jsx,javascript,typescript noremap <buffer>  :YcmCompleter GoTo<cr>
+  au FileType javascript.jsx,javascript,typescript noremap <buffer> <leader>gti :YcmCompleter GoToImplementation<cr>
+  au FileType javascript.jsx,javascript,typescript noremap <buffer> <leader>gtr :YcmCompleter GoToReferences<cr>
+  au FileType javascript.jsx,javascript,typescript map <buffer> K :YcmCompleter GetDoc<cr>
   set backupcopy=yes "this fixes webpack's crappy watcher
 augroup END
 
@@ -180,4 +183,10 @@ augroup END
 augroup go
   au FileType go setlocal listchars=tab:\ \ ,trail:·
   au FileType go setlocal noexpandtab
+  au FileType go setlocal formatprg=gofmt\ -s
+  au FileTYpe go noremap <buffer>  :YcmCompleter GoTo<cr>
+  au FileTYpe go noremap <buffer> <leader>gti :YcmCompleter GoToImplementation<cr>
+  au FileTYpe go noremap <buffer> <leader>gtr :YcmCompleter GoToReferences<cr>
+  au FileType go map <buffer> <leader>ff :YcmCompleter Format<cr>
+  au FileType go map <buffer> K :YcmCompleter GetDoc<cr>
 augroup END

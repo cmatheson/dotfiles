@@ -25,3 +25,7 @@
 	rebase = true
 [diff]
 	noprefix = true
+[core]
+	excludesfile = /Users/cmatheson/.gitignore_global
+[log]
+	date = local
