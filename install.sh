@@ -6,6 +6,7 @@ dir=$(dirname "$0")
 
 declare -A dotfiles
 dotfiles[vimrc]=~/.vimrc
+dotfiles[nvimrc]=~/.config/nvim/init.vim
 dotfiles[tmux.conf]=~/.tmux.conf
 dotfiles[bashrc]=~/.bashrc
 dotfiles[bash_aliases]=~/.bash_aliases
@@ -14,11 +15,15 @@ dotfiles[gitignoreglobal]=~/.gitignore_global
 dotfiles[git_template]=~/.git_template
 dotfiles[inputrc]=~/.inputrc
 
+ln=$(which gln)
+[ -z "$ln" ] && ln=$(which ln)
+
 for f in "$dir"/*; do
   key=$(basename "$f")
   dest=${dotfiles[$key]}
+  mkdir -p "$(dirname "$dest")"
   [ -z "$dest" ] && continue
-  ln -srb "$f" $dest
+  $ln -srb "$f" $dest
 done
 
 # install fzf
