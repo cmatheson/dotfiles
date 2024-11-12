@@ -15,7 +15,7 @@ dotfiles[gitignoreglobal]=~/.gitignore_global
 dotfiles[git_template]=~/.git_template
 dotfiles[inputrc]=~/.inputrc
 
-ln=$(which gln)
+ln=$(which gln) || true
 [ -z "$ln" ] && ln=$(which ln)
 
 for f in "$dir"/*; do
