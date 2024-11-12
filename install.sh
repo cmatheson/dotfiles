@@ -32,10 +32,14 @@ if [ ! -e ~/.fzf ]; then
   ~/.fzf/install
 fi
 
-# install vundle
-if [ ! -d ~/.vim/bundle/Vundle.vim ]; then
-  git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-fi
+# install plug (vim & neovim)
+VIM_PLUG=~/.vim/autoload/plug.vim
+[ -e "$VIM_PLUG" ] ||
+  curl -fLo "$VIM_PLUG" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+NEOVIM_PLUG=~/.local/share/nvim/site/autoload/plug.vim
+[ -e "$NEOVIM_PLUG" ] || cp "$VIM_PLUG" "$NEOVIM_PLUG"
 
 # install z
 if [ ! -e ~/opt/z/z.sh ]; then
