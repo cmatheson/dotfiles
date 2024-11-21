@@ -126,6 +126,7 @@ if ! shopt -oq posix; then
 fi
 
 export FZF_DEFAULT_COMMAND='rg --files'
+export FZF_CTRL_T_COMMAND='rg --files --color=never'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
