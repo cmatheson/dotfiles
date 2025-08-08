@@ -33,6 +33,7 @@ Plug 'tpope/vim-dadbod'
 Plug 'vimwiki/vimwiki'
 Plug 'vim-scripts/YankRing.vim'
 let g:yankring_persist = 0
+let g:yankring_clipboard_monitor = 0
 Plug 'ConradIrwin/vim-bracketed-paste'
 "Plug 'CSApprox'
 Plug 'kien/rainbow_parentheses.vim'
